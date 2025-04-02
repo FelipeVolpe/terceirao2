@@ -1,0 +1,152 @@
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #8B0000 0%, #000000 100%); /* Degradê vermelho-escuro para preto */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1.glass-effect.titulo {
+    margin: 1.5rem 0;
+    padding: 15px 30px;
+    font-size: 2.8rem;
+    text-align: center;
+    background-color: rgba(139, 0, 0, 0.6); /* Vermelho escuro translúcido */
+    border: 2px solid #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem 0;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.image-column {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.image-column img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.image-column img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(255, 0, 0, 0.3);
+    filter: brightness(1) contrast(1.2);
+}
+
+.center-column {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Preto semi-transparente */
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+    width: 100%;
+    border: 1px solid #ffffff;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Botões vermelhos com detalhes brancos */
+button {
+    padding: 14px 28px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    background-color: #8B0000; /* Vermelho escuro */
+    color: white;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #B22222; /* Vermelho mais vivo */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #8B0000;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .image-column {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
+    
+    .image-column img {
+        max-width: 250px;
+    }
+    
+    .center-column {
+        width: 90%;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    h1.glass-effect.titulo {
+        font-size: 2rem;
+        padding: 12px 24px;
+    }
+    
+    .container {
+        padding: 1.8rem;
+    }
+    
+    button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
