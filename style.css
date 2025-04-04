@@ -10,6 +10,10 @@ body {
     align-items: center;
 }
 
+.click {
+    cursor: pointer;
+}
+
 h1.glass-effect.titulo {
     margin: 1rem 0;
     padding: 12px 20px;
@@ -45,8 +49,7 @@ h1.glass-effect.titulo {
 
 .image-column img {
     width: 100%;
-    max-width: 280px;
-    height: auto;
+    height: 333px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
@@ -174,57 +177,100 @@ button:active {
     }
 }
 
-/* Adicione estas regras no seu CSS atual */
 
-/* Estilo para botões de voltar */
-.btn-voltar {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: 2px solid #ffffff;
+/* Estilos para os Cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(255, 0, 0, 0.3);
+}
+
+.card h3 {
     background-color: #8B0000;
     color: white;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 1.3rem;
     text-transform: uppercase;
-    z-index: 100;
-    width: auto;
-    max-width: 200px;
-    text-align: center;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #ffffff;
 }
 
-.btn-voltar:hover {
-    background-color: #B22222;
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.4);
+.card-content {
+    padding: 20px;
+    color: #333;
+    flex-grow: 1;
 }
 
-.btn-voltar:active {
-    transform: translateX(-50%) translateY(0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+.card-content p,
+.card-content ul,
+.card-content ol {
+    margin: 0 0 15px 0;
+    line-height: 1.6;
 }
 
-/* Ajustes para mobile */
-@media (max-width: 767px) {
-    .btn-voltar {
-        bottom: 15px;
-        padding: 8px 20px;
-        font-size: 0.9rem;
-        max-width: 160px;
+.card-content ul,
+.card-content ol {
+    padding-left: 20px;
+}
+
+.card-content li {
+    margin-bottom: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 15px;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .card h3 {
+        padding: 12px 15px;
+        font-size: 1.1rem;
+    }
+    
+    .card-content {
+        padding: 15px;
     }
 }
 
-@media (max-height: 700px) {
-    .btn-voltar {
-        bottom: 10px;
-        padding: 6px 15px;
-        font-size: 0.8rem;
+@media (max-width: 480px) {
+    .cards-container {
+        padding: 0 10px;
+    }
+    
+    .card h3 {
+        padding: 10px 12px;
+    }
+    
+    .card-content {
+        padding: 12px;
     }
 }
